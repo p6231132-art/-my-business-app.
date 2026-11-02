@@ -1,0 +1,70 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Invoice & Quote Builder</title>
+    <!-- Link to the clean external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="action-panel">
+        <div class="app-title">
+            <h1>Business Application Dashboard</h1>
+            <p>Live edit details. Print button strips controls to output native billing PDFs.</p>
+        </div>
+        <button class="btn" id="print-btn">Print / Save PDF</button>
+    </div>
+
+    <div class="invoice-header">
+        <div class="company-details">
+            <div class="editable company-name" contenteditable="true">Your Business Name Ltd</div>
+            <div class="editable" contenteditable="true">123 Corporate Parkway</div>
+            <div class="editable" contenteditable="true">Lagos, Nigeria</div>
+        </div>
+        <div class="meta-side">
+            <div class="editable-title" contenteditable="true">Invoice</div>
+            <div class="meta-field"><span>Invoice #:</span><div class="editable" contenteditable="true">INV-2026-001</div></div>
+            <div class="meta-field"><span>Date:</span><div class="editable" contenteditable="true">November 2, 2026</div></div>
+        </div>
+    </div>
+
+    <table class="items-table">
+        <thead>
+            <tr>
+                <th class="col-desc">Description</th>
+                <th class="col-qty">Qty</th>
+                <th class="col-rate">Rate</th>
+                <th class="col-total">Amount</th>
+                <th class="col-action"></th>
+            </tr>
+        </thead>
+        <tbody id="invoice-items">
+            <tr>
+                <td><input type="text" class="input-cell" value="Premium Consulting Service"></td>
+                <td><input type="number" class="input-cell qty-input" value="1"></td>
+                <td><input type="number" class="input-cell rate-input" value="150000"></td>
+                <td class="col-total">₦150,000.00</td>
+                <td class="col-action"><button class="btn-delete">×</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="btn-add-row" id="add-row-btn">+ Add Row</button>
+
+    <div class="bottom-section">
+        <div class="editable" contenteditable="true" style="border: 1px solid var(--border); padding: 10px;">Payment Terms: Net 14 days.</div>
+        <div class="totals-side">
+            <div class="total-row"><label>Subtotal</label><span id="subtotal-val">₦150,000.00</span></div>
+            <div class="total-row"><label>Tax (<input type="number" id="tax-rate" value="7.5">%)</label><span id="tax-val">₦11,250.00</span></div>
+            <div class="total-row grand-total"><label>Grand Total</label><span id="grand-total-val">₦161,250.00</span></div>
+        </div>
+    </div>
+</div>
+
+<!-- Link to the clean external JavaScript logic file -->
+<script src="app.js"></script>
+</body>
+</html>
